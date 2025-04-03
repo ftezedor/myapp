@@ -1,0 +1,43 @@
+{
+  "name": "cleanarch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "ts-node -r tsconfig-paths/register src/server.ts",
+    "debug": "node --inspect -r ts-node/register -r tsconfig-paths/register src/server.ts",
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "chgpwd": "ts-node -r tsconfig-paths/register src/tools/chgpwd.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^8.1.1",
+    "axios": "^1.7.2",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "fastify": "^4.27.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "pg": "^8.13.3",
+    "ps": "^1.0.0",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
+    "@types/sequelize": "^4.28.20",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.4"
+  }
+}

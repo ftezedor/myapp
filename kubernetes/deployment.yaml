@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 2  # Number of pods
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: ftezedor/myapp:v1  # Your Docker image
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000  # App port
+        env:
+        - name: NODE_ENV
+          value: "production"
+        # Add more environment variables if needed
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  selector:
+    app: myapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
+  loadBalancerIP: 192.168.15.200  # IP fixo dentro do Pool do MetalLB
+

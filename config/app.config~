@@ -1,0 +1,5 @@
+{
+    server: 'file:///tmp/myapp/server.config',
+    database: 'file:///tmp/myapp/sqlitedb.config',
+    secrets: 'file:///tmp/myapp/secrets.config'
+}
