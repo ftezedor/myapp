@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE = "ftezedor/myapp:v1"
-        KUBE_CONFIG = credentials('myapp-cluster-kubeconfig')  // Reference the kubeconfig secret
+        KUBE_CONFIG = credentials('kubeconfig')  // Reference the kubeconfig secret
     }
     stages {
         stage('Build Docker Image') {
