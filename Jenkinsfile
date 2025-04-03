@@ -26,7 +26,7 @@ pipeline {
                 script {
                     // Apply Kubernetes manifests (e.g., deployment.yaml)
                     sh """
-                        kubectl apply -f kubernetes/deployment.yaml
+                        kubectl replace --force -f kubernetes/deployment.yaml
                         kubectl apply -f kubernetes/service.yaml
                     """
                 }
