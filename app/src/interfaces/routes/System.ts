@@ -5,7 +5,7 @@ export default class AuthRoutes {
     public static async define(server: BaseServer) {
         
         server.setRoute('GET', '/', async (req: BaseRequest, res: BaseResponse) => {
-            res.json({ version: '1.23.10', build: '20250402', hostname: os.hostname });
+            res.json({ version: '1.23.11', build: '20250404', hostname: os.hostname });
         });
 
         server.setRoute('GET', '/healthz', async (req: BaseRequest, res: BaseResponse) => {
